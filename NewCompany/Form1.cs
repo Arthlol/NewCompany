@@ -11,28 +11,16 @@ using System.Windows.Forms;
 namespace NewCompany
 {
 
-    public static class BooleanExtensions
-    {
-        public static string ToYesNoString(this bool value)
-        {
-            return value ? "да" : "нет";
-        }
-    }
-    public static class StringExtensions
-    {
-        public static bool ToTrueFalseBool(this string value)
-        {
-            return value == "да" ? true : false;
-        }
-    }
+
     public partial class Form1 : Form
     {
-        public static int StartCoins = 10;
-        public static bool StartWorksForHimSelf = true;
-        public static int CoinIncrement = 1;
+        public const int StartCoins = 10;
+        public const bool StartWorksForHimSelf = true;
+        public const int StartCoinIncrement = 1;
         
         public int coins;
         public bool WorksForHimSelf;
+        public int CoinIncrement;
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +34,7 @@ namespace NewCompany
             }
             coins = StartCoins;
             WorksForHimSelf = StartWorksForHimSelf;
+            CoinIncrement = StartCoinIncrement;
             NewGameButton.Visible = true;
         }
 
@@ -81,6 +70,20 @@ namespace NewCompany
         private void NewGameButton_Click(object sender, EventArgs e)
         {
             gameStart();
+        }
+    }
+    public static class BooleanExtensions
+    {
+        public static string ToYesNoString(this bool value)
+        {
+            return value ? "да" : "нет";
+        }
+    }
+    public static class StringExtensions
+    {
+        public static bool ToTrueFalseBool(this string value)
+        {
+            return value == "да" ? true : false;
         }
     }
 }

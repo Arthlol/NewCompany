@@ -38,9 +38,9 @@
             // 
             // NewTurn
             // 
-            this.NewTurn.Location = new System.Drawing.Point(173, 300);
+            this.NewTurn.Location = new System.Drawing.Point(173, 279);
             this.NewTurn.Name = "NewTurn";
-            this.NewTurn.Size = new System.Drawing.Size(176, 31);
+            this.NewTurn.Size = new System.Drawing.Size(176, 52);
             this.NewTurn.TabIndex = 0;
             this.NewTurn.Text = "новый ход";
             this.NewTurn.UseVisualStyleBackColor = true;
