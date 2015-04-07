@@ -68,7 +68,8 @@ namespace NewCompany
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult Exit = MessageBox.Show("Все несохраненные изменения будут утеряны. \nВы уверенны, что хотите выйти?", "Предупреждение", MessageBoxButtons.OKCancel);
+            if (Exit.Equals(DialogResult.OK)) Application.Exit();
         }
     }
     public static class BooleanExtensions
