@@ -17,13 +17,13 @@ namespace NewCompany
         public const int StartCoins = 10;
         public const bool StartWorksForHimSelf = true;
         public const int StartCoinIncrement = 1;
-        
+
         public int coins;
         public bool WorksForHimSelf;
         public int CoinIncrement;
 
         List<Control> StartPage = new List<Control>();
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -64,6 +64,33 @@ namespace NewCompany
             NewGameButton.Visible = false;
         }
 
+        public bool saveSessionData()
+        {
+            bool res = true;
+            string message = "Введенные данные неверны. Заполните поля:\n";
+            if (SurnameTextBox.Text.Length < 1)
+            {
+                res = false;
+                message += "\t• Фамилия\n";
+            }
+            if (NameTextBox.Text.Length < 2)
+            {
+                res = false;
+                message += "\t• Имя\n";
+            }
+            if (NameTextBox.Text.Length < 5)
+            {
+                res = false;
+                message += "\t• Группа\n";
+            }
+            if (!res) MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK);
+            else
+            {
+                //save to db
+            }
+            return res;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             gameEnd();
@@ -71,18 +98,23 @@ namespace NewCompany
 
         private void NewTurn_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void NewGameButton_Click(object sender, EventArgs e)
         {
-            gameStart();
+            if (saveSessionData()) gameStart();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             DialogResult Exit = MessageBox.Show("Все несохраненные изменения будут утеряны. \nВы уверенны, что хотите выйти?", "Предупреждение", MessageBoxButtons.OKCancel);
             if (Exit.Equals(DialogResult.OK)) Application.Exit();
+        }
+
+        private void OnlyLetters_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
     public static class BooleanExtensions

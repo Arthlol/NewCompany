@@ -32,13 +32,13 @@
             this.NewGameButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.EnterSessionDataGroupBox = new System.Windows.Forms.GroupBox();
-            this.WelcomeLabel = new System.Windows.Forms.Label();
-            this.SurnameLabel = new System.Windows.Forms.Label();
-            this.SurnameTextBox = new System.Windows.Forms.TextBox();
-            this.GroupTextBox = new System.Windows.Forms.TextBox();
-            this.GroupLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
+            this.GroupTextBox = new System.Windows.Forms.TextBox();
+            this.GroupLabel = new System.Windows.Forms.Label();
+            this.SurnameTextBox = new System.Windows.Forms.TextBox();
+            this.SurnameLabel = new System.Windows.Forms.Label();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
             this.EnterSessionDataGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,56 @@
             this.EnterSessionDataGroupBox.TabIndex = 7;
             this.EnterSessionDataGroupBox.TabStop = false;
             // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(150, 100);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(300, 27);
+            this.NameTextBox.TabIndex = 3;
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(50, 100);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(43, 21);
+            this.NameLabel.TabIndex = 2;
+            this.NameLabel.Text = "Имя";
+            // 
+            // GroupTextBox
+            // 
+            this.GroupTextBox.Location = new System.Drawing.Point(150, 150);
+            this.GroupTextBox.Name = "GroupTextBox";
+            this.GroupTextBox.Size = new System.Drawing.Size(300, 27);
+            this.GroupTextBox.TabIndex = 5;
+            // 
+            // GroupLabel
+            // 
+            this.GroupLabel.AutoSize = true;
+            this.GroupLabel.Location = new System.Drawing.Point(50, 150);
+            this.GroupLabel.Name = "GroupLabel";
+            this.GroupLabel.Size = new System.Drawing.Size(67, 21);
+            this.GroupLabel.TabIndex = 4;
+            this.GroupLabel.Text = "Группа";
+            // 
+            // SurnameTextBox
+            // 
+            this.SurnameTextBox.Location = new System.Drawing.Point(150, 50);
+            this.SurnameTextBox.Name = "SurnameTextBox";
+            this.SurnameTextBox.Size = new System.Drawing.Size(300, 27);
+            this.SurnameTextBox.TabIndex = 1;
+            this.SurnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
+            // 
+            // SurnameLabel
+            // 
+            this.SurnameLabel.AutoSize = true;
+            this.SurnameLabel.Location = new System.Drawing.Point(50, 50);
+            this.SurnameLabel.Name = "SurnameLabel";
+            this.SurnameLabel.Size = new System.Drawing.Size(85, 21);
+            this.SurnameLabel.TabIndex = 0;
+            this.SurnameLabel.Text = "Фамилия";
+            // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
@@ -105,54 +155,6 @@
             this.WelcomeLabel.Text = "Добро пожаловать в тренинговую систему <Внештатная ситуация>\r\nВведите свои данные" +
     ":";
             this.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SurnameLabel
-            // 
-            this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(50, 50);
-            this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(85, 21);
-            this.SurnameLabel.TabIndex = 0;
-            this.SurnameLabel.Text = "Фамилия";
-            // 
-            // SurnameTextBox
-            // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(150, 50);
-            this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(300, 27);
-            this.SurnameTextBox.TabIndex = 1;
-            // 
-            // GroupTextBox
-            // 
-            this.GroupTextBox.Location = new System.Drawing.Point(150, 150);
-            this.GroupTextBox.Name = "GroupTextBox";
-            this.GroupTextBox.Size = new System.Drawing.Size(300, 27);
-            this.GroupTextBox.TabIndex = 3;
-            // 
-            // GroupLabel
-            // 
-            this.GroupLabel.AutoSize = true;
-            this.GroupLabel.Location = new System.Drawing.Point(50, 150);
-            this.GroupLabel.Name = "GroupLabel";
-            this.GroupLabel.Size = new System.Drawing.Size(67, 21);
-            this.GroupLabel.TabIndex = 2;
-            this.GroupLabel.Text = "Группа";
-            // 
-            // NameTextBox
-            // 
-            this.NameTextBox.Location = new System.Drawing.Point(150, 100);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(300, 27);
-            this.NameTextBox.TabIndex = 5;
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(50, 100);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(43, 21);
-            this.NameLabel.TabIndex = 4;
-            this.NameLabel.Text = "Имя";
             // 
             // Form1
             // 
