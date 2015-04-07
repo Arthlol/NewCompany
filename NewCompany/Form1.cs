@@ -32,6 +32,7 @@ namespace NewCompany
             {
                 c.Visible = false;
             }
+            ExitButton.Visible = true;
             coins = StartCoins;
             WorksForHimSelf = StartWorksForHimSelf;
             CoinIncrement = StartCoinIncrement;
@@ -47,8 +48,6 @@ namespace NewCompany
             }
             coins = StartCoins;
             WorksForHimSelf = StartWorksForHimSelf;
-            CoinsLabelValue.Text = coins.ToString();
-            WorksForHimSelfLabelValue.Text = WorksForHimSelf.ToYesNoString();
             NewGameButton.Visible = false;
         }
 
@@ -59,18 +58,17 @@ namespace NewCompany
 
         private void NewTurn_Click(object sender, EventArgs e)
         {
-            if (WorksForHimSelfLabelValue.Text.ToTrueFalseBool()) coins++;
-            CoinsLabelValue.Text = coins.ToString();
-
-            if (Convert.ToInt32(CoinsLabelValue.Text) == 27) {
-                MessageBox.Show("Игра окончена!");
-                gameEnd();
-            }
+            
         }
 
         private void NewGameButton_Click(object sender, EventArgs e)
         {
             gameStart();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     public static class BooleanExtensions

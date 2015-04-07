@@ -29,96 +29,72 @@
         private void InitializeComponent()
         {
             this.NewTurn = new System.Windows.Forms.Button();
-            this.CoinsLabel = new System.Windows.Forms.Label();
-            this.CoinsLabelValue = new System.Windows.Forms.Label();
-            this.WorksForHimSelfLabel = new System.Windows.Forms.Label();
-            this.WorksForHimSelfLabelValue = new System.Windows.Forms.Label();
             this.NewGameButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NewTurn
             // 
-            this.NewTurn.Location = new System.Drawing.Point(173, 279);
+            this.NewTurn.Location = new System.Drawing.Point(288, 451);
+            this.NewTurn.Margin = new System.Windows.Forms.Padding(5);
             this.NewTurn.Name = "NewTurn";
-            this.NewTurn.Size = new System.Drawing.Size(176, 52);
+            this.NewTurn.Size = new System.Drawing.Size(293, 52);
             this.NewTurn.TabIndex = 0;
-            this.NewTurn.Text = "новый ход";
+            this.NewTurn.Text = "Следующая ситуация";
             this.NewTurn.UseVisualStyleBackColor = true;
             this.NewTurn.Click += new System.EventHandler(this.NewTurn_Click);
             // 
-            // CoinsLabel
-            // 
-            this.CoinsLabel.AutoSize = true;
-            this.CoinsLabel.Location = new System.Drawing.Point(12, 48);
-            this.CoinsLabel.Name = "CoinsLabel";
-            this.CoinsLabel.Size = new System.Drawing.Size(50, 13);
-            this.CoinsLabel.TabIndex = 1;
-            this.CoinsLabel.Text = "Монеты:";
-            // 
-            // CoinsLabelValue
-            // 
-            this.CoinsLabelValue.AutoSize = true;
-            this.CoinsLabelValue.Location = new System.Drawing.Point(90, 48);
-            this.CoinsLabelValue.Name = "CoinsLabelValue";
-            this.CoinsLabelValue.Size = new System.Drawing.Size(13, 13);
-            this.CoinsLabelValue.TabIndex = 2;
-            this.CoinsLabelValue.Text = "_";
-            // 
-            // WorksForHimSelfLabel
-            // 
-            this.WorksForHimSelfLabel.AutoSize = true;
-            this.WorksForHimSelfLabel.Location = new System.Drawing.Point(15, 95);
-            this.WorksForHimSelfLabel.Name = "WorksForHimSelfLabel";
-            this.WorksForHimSelfLabel.Size = new System.Drawing.Size(99, 13);
-            this.WorksForHimSelfLabel.TabIndex = 3;
-            this.WorksForHimSelfLabel.Text = "Работаем на себя";
-            // 
-            // WorksForHimSelfLabelValue
-            // 
-            this.WorksForHimSelfLabelValue.AutoSize = true;
-            this.WorksForHimSelfLabelValue.Location = new System.Drawing.Point(136, 95);
-            this.WorksForHimSelfLabelValue.Name = "WorksForHimSelfLabelValue";
-            this.WorksForHimSelfLabelValue.Size = new System.Drawing.Size(13, 13);
-            this.WorksForHimSelfLabelValue.TabIndex = 4;
-            this.WorksForHimSelfLabelValue.Text = "_";
-            // 
             // NewGameButton
             // 
-            this.NewGameButton.Location = new System.Drawing.Point(173, 233);
+            this.NewGameButton.Location = new System.Drawing.Point(288, 376);
+            this.NewGameButton.Margin = new System.Windows.Forms.Padding(5);
             this.NewGameButton.Name = "NewGameButton";
-            this.NewGameButton.Size = new System.Drawing.Size(176, 40);
+            this.NewGameButton.Size = new System.Drawing.Size(293, 65);
             this.NewGameButton.TabIndex = 5;
-            this.NewGameButton.Text = "Новая игра";
+            this.NewGameButton.Text = "Начать работу";
             this.NewGameButton.UseVisualStyleBackColor = true;
             this.NewGameButton.Click += new System.EventHandler(this.NewGameButton_Click);
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.LightCoral;
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.Location = new System.Drawing.Point(288, 569);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(293, 43);
+            this.ExitButton.TabIndex = 6;
+            this.ExitButton.Text = "Завершить работу";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 386);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(870, 624);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NewGameButton);
-            this.Controls.Add(this.WorksForHimSelfLabelValue);
-            this.Controls.Add(this.WorksForHimSelfLabel);
-            this.Controls.Add(this.CoinsLabelValue);
-            this.Controls.Add(this.CoinsLabel);
             this.Controls.Add(this.NewTurn);
+            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
-            this.Text = "типа название";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Тренинговая система";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button NewTurn;
-        private System.Windows.Forms.Label CoinsLabel;
-        private System.Windows.Forms.Label CoinsLabelValue;
-        private System.Windows.Forms.Label WorksForHimSelfLabel;
-        private System.Windows.Forms.Label WorksForHimSelfLabelValue;
         private System.Windows.Forms.Button NewGameButton;
+        private System.Windows.Forms.Button ExitButton;
     }
 }
 
