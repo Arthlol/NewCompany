@@ -21,9 +21,14 @@ namespace NewCompany
         public int coins;
         public bool WorksForHimSelf;
         public int CoinIncrement;
+
+        List<Control> StartPage = new List<Control>();
+        
         public Form1()
         {
             InitializeComponent();
+            StartPage.Add(EnterSessionDataGroupBox);
+            StartPage.Add(WelcomeLabel);
         }
 
         public void gameEnd()
@@ -32,7 +37,12 @@ namespace NewCompany
             {
                 c.Visible = false;
             }
+            foreach (Control c in StartPage)
+            {
+                c.Visible = true;
+            }
             ExitButton.Visible = true;
+            EnterSessionDataGroupBox.Visible = true;
             coins = StartCoins;
             WorksForHimSelf = StartWorksForHimSelf;
             CoinIncrement = StartCoinIncrement;
@@ -46,7 +56,10 @@ namespace NewCompany
             {
                 c.Visible = true;
             }
-            coins = StartCoins;
+            foreach (Control c in StartPage)
+            {
+                c.Visible = false;
+            }
             WorksForHimSelf = StartWorksForHimSelf;
             NewGameButton.Visible = false;
         }
