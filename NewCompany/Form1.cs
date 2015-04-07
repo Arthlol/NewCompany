@@ -38,6 +38,7 @@ namespace NewCompany
             NewGameButton.Visible = true;
         }
 
+
         public void gameStart()
         {
             foreach (Control c in this.Controls)
