@@ -93,7 +93,7 @@ namespace NewCompany
                     DateStart = DateTime.Now
                 };
                 db.Session.Add(item);
-                db.SaveChanges();
+                //db.SaveChanges();
             }
             return res;
         }
