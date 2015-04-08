@@ -44,6 +44,8 @@
             this.Action4 = new System.Windows.Forms.TextBox();
             this.Group4 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -186,13 +188,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 579);
+            this.label1.Location = new System.Drawing.Point(52, 568);
             this.label1.MaximumSize = new System.Drawing.Size(500, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(456, 63);
+            this.label1.Size = new System.Drawing.Size(456, 84);
             this.label1.TabIndex = 7;
             this.label1.Text = "Ваша задача определить, к кому и с какой целью стоит обратиться в сложившейся сит" +
-    "уации. Например: Техподдержка - Узнать, что поизошло с сервером.";
+    "уации. Например: \r\nТехподдержка - Узнать, что поизошло с сервером. \r\nИ помните, " +
+    "иногда порядок действий важен.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 21);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Обратиться к";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(212, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 21);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Действие";
             // 
             // TestForm
             // 
@@ -201,6 +222,8 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -246,5 +269,7 @@
         private System.Windows.Forms.TextBox Action4;
         private System.Windows.Forms.TextBox Group4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

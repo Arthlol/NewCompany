@@ -23,25 +23,34 @@ namespace NewCompany
             var SessionList = db.Session.ToList();
             var SituaionList = db.Session.ToList();
             comboBox.DataSource = db.Session.ToList();
+            foreach (var element in SituaionList )
+            {
+                element.Surname = element.Surname + " " + element.Name + ", " + element.Group;
+            }
             comboBox.ValueMember =  "Id";
             comboBox.DisplayMember = "Surname";
-            foreach (var element in AnswerList)
-            {
-                AnswerTextBox.Text += "Кому: " + element.Action + " " + "Что: " + element.PeopleGroup +"\r\n";
-            }
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             this.Text = comboBox.SelectedValue.ToString();
-#warning ошибка при конверте 
-            /*
-            var AnswerList = db.Answer.Where(x => x.SessionId == Convert.ToInt32(comboBox.SelectedValue)).ToList();
-            foreach (var element in AnswerList)
+            int SessionId = 0;
+            if (int.TryParse(comboBox.SelectedValue.ToString(), out SessionId))
             {
-                AnswerTextBox.Text += "Кому: " + element.Action + " " + "Что: " + element.PeopleGroup + "\r\n";
-            }*/
+                var AnswerList = db.Answer.Where(x => x.SessionId == SessionId).GroupBy(x => x.SituationId);
+
+                foreach (var s in AnswerList)
+                {
+                    AnswerLabel.Text += "○ " + db.Situation.Find(s.FirstOrDefault().SituationId).Name;
+                    AnswerLabel.Text += " - " + db.Situation.Find(s.FirstOrDefault().SituationId).Description;
+                    AnswerLabel.Text += "\n";
+                    foreach (var element in s)
+                    {
+                        AnswerLabel.Text += " • " + element.PeopleGroup + " - " + element.Action + "\r\n";
+                    }
+                    AnswerLabel.Text += "\n";
+                }
+            }
         }
     }
 }
