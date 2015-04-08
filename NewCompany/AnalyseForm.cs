@@ -38,7 +38,6 @@ namespace NewCompany
             if (int.TryParse(comboBox.SelectedValue.ToString(), out SessionId))
             {
                 var AnswerList = db.Answer.Where(x => x.SessionId == SessionId).GroupBy(x => x.SituationId);
-
                 foreach (var s in AnswerList)
                 {
                     AnswerLabel.Text += "○ " + db.Situation.Find(s.FirstOrDefault().SituationId).Name;

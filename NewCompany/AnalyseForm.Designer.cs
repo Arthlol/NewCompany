@@ -60,7 +60,7 @@
             // 
             this.AnswerLabel.AutoSize = true;
             this.AnswerLabel.Location = new System.Drawing.Point(20, 31);
-            this.AnswerLabel.MaximumSize = new System.Drawing.Size(700, 0);
+            this.AnswerLabel.MaximumSize = new System.Drawing.Size(700, 300);
             this.AnswerLabel.Name = "AnswerLabel";
             this.AnswerLabel.Size = new System.Drawing.Size(0, 21);
             this.AnswerLabel.TabIndex = 4;
