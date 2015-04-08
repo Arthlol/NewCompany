@@ -32,16 +32,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AnswerLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox
             // 
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Location = new System.Drawing.Point(14, 36);
-            this.comboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(500, 29);
             this.comboBox.TabIndex = 1;
@@ -59,29 +61,32 @@
             // AnswerLabel
             // 
             this.AnswerLabel.AutoSize = true;
-            this.AnswerLabel.Location = new System.Drawing.Point(20, 31);
-            this.AnswerLabel.MaximumSize = new System.Drawing.Size(700, 300);
+            this.AnswerLabel.Location = new System.Drawing.Point(3, 10);
+            this.AnswerLabel.MaximumSize = new System.Drawing.Size(700, 0);
             this.AnswerLabel.Name = "AnswerLabel";
-            this.AnswerLabel.Size = new System.Drawing.Size(0, 21);
+            this.AnswerLabel.Size = new System.Drawing.Size(110, 21);
             this.AnswerLabel.TabIndex = 4;
+            this.AnswerLabel.Text = "AnswerLabel";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.AnswerLabel);
             this.groupBox1.Location = new System.Drawing.Point(50, 100);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(800, 537);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // panel1
             // 
-            this.textBox1.Location = new System.Drawing.Point(611, 498);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(27, 27);
-            this.textBox1.TabIndex = 5;
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.AnswerLabel);
+            this.panel1.Location = new System.Drawing.Point(6, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(770, 450);
+            this.panel1.TabIndex = 7;
             // 
             // button1
             // 
@@ -91,6 +96,13 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Оценить";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(611, 498);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(27, 27);
+            this.textBox1.TabIndex = 5;
             // 
             // Оценка
             // 
@@ -103,13 +115,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Оценка";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnalyseForm";
             this.Load += new System.EventHandler(this.Оценка_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +137,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
