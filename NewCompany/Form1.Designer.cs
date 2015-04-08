@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NewTurn = new System.Windows.Forms.Button();
             this.NewGameButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.EnterSessionDataGroupBox = new System.Windows.Forms.GroupBox();
@@ -42,21 +41,10 @@
             this.EnterSessionDataGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // NewTurn
-            // 
-            this.NewTurn.Location = new System.Drawing.Point(350, 450);
-            this.NewTurn.Margin = new System.Windows.Forms.Padding(5);
-            this.NewTurn.Name = "NewTurn";
-            this.NewTurn.Size = new System.Drawing.Size(300, 50);
-            this.NewTurn.TabIndex = 0;
-            this.NewTurn.Text = "Следующая ситуация";
-            this.NewTurn.UseVisualStyleBackColor = true;
-            this.NewTurn.Click += new System.EventHandler(this.NewTurn_Click);
-            // 
             // NewGameButton
             // 
             this.NewGameButton.BackColor = System.Drawing.Color.LightGreen;
-            this.NewGameButton.Location = new System.Drawing.Point(350, 450);
+            this.NewGameButton.Location = new System.Drawing.Point(300, 450);
             this.NewGameButton.Margin = new System.Windows.Forms.Padding(5);
             this.NewGameButton.Name = "NewGameButton";
             this.NewGameButton.Size = new System.Drawing.Size(300, 50);
@@ -69,7 +57,7 @@
             // 
             this.ExitButton.BackColor = System.Drawing.Color.MistyRose;
             this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitButton.Location = new System.Drawing.Point(350, 650);
+            this.ExitButton.Location = new System.Drawing.Point(300, 600);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(300, 50);
             this.ExitButton.TabIndex = 6;
@@ -87,9 +75,9 @@
             this.EnterSessionDataGroupBox.Controls.Add(this.GroupLabel);
             this.EnterSessionDataGroupBox.Controls.Add(this.SurnameTextBox);
             this.EnterSessionDataGroupBox.Controls.Add(this.SurnameLabel);
-            this.EnterSessionDataGroupBox.Location = new System.Drawing.Point(250, 150);
+            this.EnterSessionDataGroupBox.Location = new System.Drawing.Point(200, 150);
             this.EnterSessionDataGroupBox.Name = "EnterSessionDataGroupBox";
-            this.EnterSessionDataGroupBox.Size = new System.Drawing.Size(500, 225);
+            this.EnterSessionDataGroupBox.Size = new System.Drawing.Size(500, 250);
             this.EnterSessionDataGroupBox.TabIndex = 7;
             this.EnterSessionDataGroupBox.TabStop = false;
             // 
@@ -147,7 +135,7 @@
             // 
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WelcomeLabel.Location = new System.Drawing.Point(172, 53);
+            this.WelcomeLabel.Location = new System.Drawing.Point(135, 66);
             this.WelcomeLabel.Name = "WelcomeLabel";
             this.WelcomeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.WelcomeLabel.Size = new System.Drawing.Size(656, 44);
@@ -161,13 +149,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(984, 712);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.ControlBox = false;
             this.Controls.Add(this.WelcomeLabel);
             this.Controls.Add(this.EnterSessionDataGroupBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NewGameButton);
-            this.Controls.Add(this.NewTurn);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
@@ -186,7 +173,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button NewTurn;
         private System.Windows.Forms.Button NewGameButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label WelcomeLabel;

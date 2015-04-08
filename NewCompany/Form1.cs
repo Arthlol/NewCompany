@@ -28,6 +28,7 @@ namespace NewCompany
             InitializeComponent();
             StartPage.Add(EnterSessionDataGroupBox);
             StartPage.Add(WelcomeLabel);
+            StartPage.Add(NewGameButton);
         }
 
         public void gameEnd()
@@ -48,15 +49,18 @@ namespace NewCompany
 
         public void gameStart()
         {
-            foreach (Control c in this.Controls)
-            {
-                c.Visible = true;
-            }
-            foreach (Control c in StartPage)
-            {
-                c.Visible = false;
-            }
-            NewGameButton.Visible = false;
+            //foreach (Control c in this.Controls)
+            //{
+            //    c.Visible = true;
+            //}
+            //foreach (Control c in StartPage)
+            //{
+            //    c.Visible = false;
+            //}
+            //NewGameButton.Visible = false;
+            this.Visible = false;
+            var TestForm = new TestForm();
+            TestForm.Show();
         }
 
         public bool saveSessionData()
