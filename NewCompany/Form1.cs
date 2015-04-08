@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,7 @@ namespace NewCompany
         public int CoinIncrement;
 
         List<Control> StartPage = new List<Control>();
-
+        Entities db = new Entities();
         public Form1()
         {
             InitializeComponent();
@@ -78,7 +80,7 @@ namespace NewCompany
                 res = false;
                 message += "\t• Имя\n";
             }
-            if (NameTextBox.Text.Length < 5)
+            if (GroupTextBox.Text.Length < 5)
             {
                 res = false;
                 message += "\t• Группа\n";
@@ -86,7 +88,15 @@ namespace NewCompany
             if (!res) MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK);
             else
             {
-                //save to db
+                var item = new Session()
+                {
+                    Surname = SurnameTextBox.Text,
+                    Name = NameTextBox.Text,
+                    Group = GroupTextBox.Text,
+                    DateStart = DateTime.Now
+                };
+                db.Session.Add(item);
+                db.SaveChanges();
             }
             return res;
         }
