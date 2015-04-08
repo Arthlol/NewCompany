@@ -106,6 +106,7 @@ namespace NewCompany
             {
                 this.Visible = false;
                 this.Owner.Visible = true;
+                this.Close();
 
             }
             else if (curPos == 4)

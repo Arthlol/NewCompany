@@ -42,6 +42,7 @@ namespace NewCompany
                 c.Visible = true;
             }
             ExitButton.Visible = true;
+            AnalyseButton.Visible = true;
             EnterSessionDataGroupBox.Visible = true;
             NewGameButton.Visible = true;
         }
@@ -123,6 +124,13 @@ namespace NewCompany
         private void OnlyLetters_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void AnalyseButton_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            var af = new AccessForm();
+            af.Show(this);
         }
     }
     public static class BooleanExtensions

@@ -38,6 +38,7 @@
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.SurnameLabel = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.AnalyseButton = new System.Windows.Forms.Button();
             this.EnterSessionDataGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +145,16 @@
     ":";
             this.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // AnalyseButton
+            // 
+            this.AnalyseButton.Location = new System.Drawing.Point(13, 13);
+            this.AnalyseButton.Name = "AnalyseButton";
+            this.AnalyseButton.Size = new System.Drawing.Size(101, 48);
+            this.AnalyseButton.TabIndex = 9;
+            this.AnalyseButton.Text = "SECURE";
+            this.AnalyseButton.UseVisualStyleBackColor = true;
+            this.AnalyseButton.Click += new System.EventHandler(this.AnalyseButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -151,6 +162,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.AnalyseButton);
             this.Controls.Add(this.WelcomeLabel);
             this.Controls.Add(this.EnterSessionDataGroupBox);
             this.Controls.Add(this.ExitButton);
@@ -183,6 +195,7 @@
         private System.Windows.Forms.TextBox SurnameTextBox;
         private System.Windows.Forms.Label SurnameLabel;
         public System.Windows.Forms.GroupBox EnterSessionDataGroupBox;
+        private System.Windows.Forms.Button AnalyseButton;
     }
 }
 
