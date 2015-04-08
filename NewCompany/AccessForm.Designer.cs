@@ -38,32 +38,33 @@
             // 
             // AccessButton
             // 
-            this.AccessButton.Location = new System.Drawing.Point(85, 143);
+            this.AccessButton.Location = new System.Drawing.Point(15, 63);
             this.AccessButton.Name = "AccessButton";
             this.AccessButton.Size = new System.Drawing.Size(122, 23);
-            this.AccessButton.TabIndex = 0;
+            this.AccessButton.TabIndex = 2;
             this.AccessButton.Text = "Войти";
             this.AccessButton.UseVisualStyleBackColor = true;
             this.AccessButton.Click += new System.EventHandler(this.AccessButton_Click);
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(85, 106);
+            this.PasswordTextBox.Location = new System.Drawing.Point(154, 25);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '•';
             this.PasswordTextBox.Size = new System.Drawing.Size(122, 20);
             this.PasswordTextBox.TabIndex = 1;
             // 
             // LoginTextBox
             // 
-            this.LoginTextBox.Location = new System.Drawing.Point(85, 39);
+            this.LoginTextBox.Location = new System.Drawing.Point(15, 25);
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(122, 20);
-            this.LoginTextBox.TabIndex = 2;
+            this.LoginTextBox.TabIndex = 0;
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Location = new System.Drawing.Point(82, 9);
+            this.LoginLabel.Location = new System.Drawing.Point(12, 9);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(38, 13);
             this.LoginLabel.TabIndex = 3;
@@ -72,7 +73,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(82, 76);
+            this.PasswordLabel.Location = new System.Drawing.Point(151, 9);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(45, 13);
             this.PasswordLabel.TabIndex = 4;
@@ -80,11 +81,11 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(85, 186);
+            this.CancelButton.Location = new System.Drawing.Point(154, 63);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(122, 23);
-            this.CancelButton.TabIndex = 5;
-            this.CancelButton.Text = "Назад";
+            this.CancelButton.TabIndex = 4;
+            this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -92,7 +93,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 238);
+            this.ClientSize = new System.Drawing.Size(302, 105);
+            this.ControlBox = false;
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginLabel);
@@ -100,7 +102,8 @@
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.AccessButton);
             this.Name = "AccessForm";
-            this.Text = "AccessForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Результаты";
             this.Load += new System.EventHandler(this.AccessForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

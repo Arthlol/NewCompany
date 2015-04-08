@@ -147,12 +147,15 @@
             // 
             // AnalyseButton
             // 
-            this.AnalyseButton.Location = new System.Drawing.Point(13, 13);
+            this.AnalyseButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.AnalyseButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.AnalyseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AnalyseButton.Location = new System.Drawing.Point(0, 0);
             this.AnalyseButton.Name = "AnalyseButton";
             this.AnalyseButton.Size = new System.Drawing.Size(101, 48);
             this.AnalyseButton.TabIndex = 9;
-            this.AnalyseButton.Text = "SECURE";
-            this.AnalyseButton.UseVisualStyleBackColor = true;
+            this.AnalyseButton.Text = "Оценить";
+            this.AnalyseButton.UseVisualStyleBackColor = false;
             this.AnalyseButton.Click += new System.EventHandler(this.AnalyseButton_Click);
             // 
             // Form1

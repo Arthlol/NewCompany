@@ -43,6 +43,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Action4 = new System.Windows.Forms.TextBox();
             this.Group4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -66,6 +67,7 @@
             this.ContentLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ContentLabel.Location = new System.Drawing.Point(50, 75);
             this.ContentLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.ContentLabel.MaximumSize = new System.Drawing.Size(800, 0);
             this.ContentLabel.Name = "ContentLabel";
             this.ContentLabel.Size = new System.Drawing.Size(97, 24);
             this.ContentLabel.TabIndex = 1;
@@ -181,6 +183,17 @@
             this.Group4.Size = new System.Drawing.Size(150, 27);
             this.Group4.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 579);
+            this.label1.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(456, 63);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ваша задача определить, к кому и с какой целью стоит обратиться в сложившейся сит" +
+    "уации. Например: Техподдержка - Узнать, что поизошло с сервером.";
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -188,6 +201,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -231,5 +245,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox Action4;
         private System.Windows.Forms.TextBox Group4;
+        private System.Windows.Forms.Label label1;
     }
 }

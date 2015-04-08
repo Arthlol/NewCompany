@@ -128,7 +128,6 @@ namespace NewCompany
 
         private void AnalyseButton_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
             var af = new AccessForm();
             af.Show(this);
         }

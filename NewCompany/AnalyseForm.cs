@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NewCompany
 {
-    public partial class AnalyseForm : Form
+    public partial class Оценка : Form
     {
-        public AnalyseForm()
+        public Оценка()
         {
             InitializeComponent();
         }

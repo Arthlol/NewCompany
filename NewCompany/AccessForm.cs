@@ -21,15 +21,15 @@ namespace NewCompany
         private string password = "123";
         private void AccessForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void AccessButton_Click(object sender, EventArgs e)
         {
             if (PasswordTextBox.Text == password && LoginTextBox.Text == login)
             {
+                this.Owner.Visible = false;
                 this.Visible = false;
-                var analyseForm = new AnalyseForm();
+                var analyseForm = new Оценка();
                 analyseForm.Show(this.Owner);
                 this.Close();
             }

@@ -1,6 +1,6 @@
 ﻿namespace NewCompany
 {
-    partial class AnalyseForm
+    partial class Оценка
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // AnalyseForm
+            // Оценка
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 358);
-            this.Name = "AnalyseForm";
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(884, 662);
+            this.ControlBox = false;
+            this.Name = "Оценка";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnalyseForm";
             this.ResumeLayout(false);
 
