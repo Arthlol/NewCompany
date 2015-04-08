@@ -16,9 +16,6 @@ namespace NewCompany
 
     public partial class Form1 : Form
     {
-        public const int StartCoins = 10;
-        public const bool StartWorksForHimSelf = true;
-        public const int StartCoinIncrement = 1;
 
         public int coins;
         public bool WorksForHimSelf;
@@ -45,9 +42,6 @@ namespace NewCompany
             }
             ExitButton.Visible = true;
             EnterSessionDataGroupBox.Visible = true;
-            coins = StartCoins;
-            WorksForHimSelf = StartWorksForHimSelf;
-            CoinIncrement = StartCoinIncrement;
             NewGameButton.Visible = true;
         }
 
@@ -62,7 +56,6 @@ namespace NewCompany
             {
                 c.Visible = false;
             }
-            WorksForHimSelf = StartWorksForHimSelf;
             NewGameButton.Visible = false;
         }
 
