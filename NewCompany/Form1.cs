@@ -60,7 +60,8 @@ namespace NewCompany
             //NewGameButton.Visible = false;
             this.Visible = false;
             var TestForm = new TestForm();
-            TestForm.Show();
+            TestForm.Show(this);
+
         }
 
         public bool saveSessionData()
@@ -93,7 +94,7 @@ namespace NewCompany
                     DateStart = DateTime.Now
                 };
                 db.Session.Add(item);
-                //db.SaveChanges();
+                db.SaveChanges();
             }
             return res;
         }

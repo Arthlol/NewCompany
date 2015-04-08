@@ -9,8 +9,8 @@
         <EntityTypeShape EntityType="Model.Situation" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Answer" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="Model.FK_Answer_Session" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_Answer_Situation" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="Model.FK_Answer_Session" />
+        <AssociationConnector ManuallyRouted="false" Association="Model.FK_Answer_Situation" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,18 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEWCOMPANY\bin\debugCOMPANYDB.MDF.dbo.Answer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Answer">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="SessionId" />
-            <PropertyRef Name="SituationId" />
-            <PropertyRef Name="PeopleGroup" />
-            <PropertyRef Name="Action" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SessionId" Type="int" Nullable="false" />
           <Property Name="SituationId" Type="int" Nullable="false" />
           <Property Name="PeopleGroup" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -76,18 +70,10 @@ warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEW
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Session" EntityType="Self.Session" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Situation" EntityType="Self.Situation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Answer" EntityType="Self.Answer" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Answer].[Id] AS [Id], 
-    [Answer].[SessionId] AS [SessionId], 
-    [Answer].[SituationId] AS [SituationId], 
-    [Answer].[PeopleGroup] AS [PeopleGroup], 
-    [Answer].[Action] AS [Action]
-    FROM [dbo].[Answer] AS [Answer]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Answer_Session" Association="Self.FK_Answer_Session">
             <End Role="Session" EntitySet="Session" />
             <End Role="Answer" EntitySet="Answer" />
@@ -97,8 +83,7 @@ warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEW
             <End Role="Answer" EntitySet="Answer" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -137,10 +122,6 @@ warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEW
         <EntityType Name="Answer">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="SessionId" />
-            <PropertyRef Name="SituationId" />
-            <PropertyRef Name="PeopleGroup" />
-            <PropertyRef Name="Action" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="SessionId" Type="Int32" Nullable="false" />
@@ -151,8 +132,8 @@ warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEW
           <NavigationProperty Name="Situation" Relationship="Self.FK_Answer_Situation" FromRole="Answer" ToRole="Situation" />
         </EntityType>
         <Association Name="FK_Answer_Session">
-          <End Role="Session" Type="Self.Session" Multiplicity="1" />
-          <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+          <End Type="Self.Session" Multiplicity="1" Role="Session" />
+          <End Type="Self.Answer" Multiplicity="*" Role="Answer" />
           <ReferentialConstraint>
             <Principal Role="Session">
               <PropertyRef Name="Id" />
@@ -163,8 +144,8 @@ warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEW
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Answer_Situation">
-          <End Role="Situation" Type="Self.Situation" Multiplicity="1" />
-          <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+          <End Type="Self.Situation" Multiplicity="1" Role="Situation" />
+          <End Type="Self.Answer" Multiplicity="*" Role="Answer" />
           <ReferentialConstraint>
             <Principal Role="Situation">
               <PropertyRef Name="Id" />
@@ -180,12 +161,12 @@ warning 6002: The table/view 'C:\USERS\INTELSOFT\DOCUMENTS\GITHUB\NEWCOMPANY\NEW
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Answer" EntityType="Self.Answer" />
           <AssociationSet Name="FK_Answer_Session" Association="Self.FK_Answer_Session">
-            <End Role="Session" EntitySet="Session" />
-            <End Role="Answer" EntitySet="Answer" />
+            <End EntitySet="Session" Role="Session" />
+            <End EntitySet="Answer" Role="Answer" />
           </AssociationSet>
           <AssociationSet Name="FK_Answer_Situation" Association="Self.FK_Answer_Situation">
-            <End Role="Situation" EntitySet="Situation" />
-            <End Role="Answer" EntitySet="Answer" />
+            <End EntitySet="Situation" Role="Situation" />
+            <End EntitySet="Answer" Role="Answer" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
