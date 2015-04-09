@@ -12,15 +12,22 @@ namespace NewCompany
 {
     public partial class Оценка : Form
     {
-
+        readonly Entities bd = new Entities();
+        Entities db = new Entities();
         int SessionId = 0;
+        private List<Session> SessionList = new List<Session>();
         public Оценка()
         {
             InitializeComponent();
         }
-        Entities db = new Entities();
+        
         private void Оценка_Load(object sender, EventArgs e)
         {
+            SessionList = bd.Session.ToList();
+            foreach (var element in SessionList)
+            {
+                element.Name = element.Surname + " " + element.Name;
+            }
             UpdateCombobox();
         }
 
@@ -67,7 +74,7 @@ namespace NewCompany
                 var item = db.Session.Find(SessionId);
                 item.Score = Score;
                 db.SaveChanges();
-                comboBox.Text = comboBox.Text.Substring(3) + " " + Score.ToString();
+                comboBox.Text = comboBox.Text.Substring(2) + " → " + Score.ToString();
                 UpdateCombobox();
             }
         }
@@ -75,16 +82,15 @@ namespace NewCompany
         public void UpdateCombobox()
         {
             int val = comboBox.SelectedIndex == -1 ? 0 : comboBox.SelectedIndex;
-            var SituaionList = db.Session.ToList();
-            comboBox.DataSource = db.Session.ToList();
-            foreach (var element in SituaionList)
+            comboBox.DataSource = SessionList;
+            foreach (var element in SessionList)
             {
                 element.Surname = "";
                 if (element.Score == null)
-                    element.Surname += "!";
-                element.Surname += element.Surname + " " + element.Name + ", " + element.Group;
+                    element.Surname = "! ";
+                element.Surname += element.Name + ", " + element.Group;
                 if (element.Score != null)
-                    element.Surname += " " + element.Score.ToString();
+                    element.Surname += ": " + element.Score.ToString();
             }
             comboBox.ValueMember = "Id";
             comboBox.DisplayMember = "Surname";
