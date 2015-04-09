@@ -38,9 +38,9 @@
             // 
             // ButtonAdd
             // 
-            this.ButtonAdd.Location = new System.Drawing.Point(19, 209);
+            this.ButtonAdd.Location = new System.Drawing.Point(290, 152);
             this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(171, 23);
+            this.ButtonAdd.Size = new System.Drawing.Size(100, 25);
             this.ButtonAdd.TabIndex = 0;
             this.ButtonAdd.Text = "Добавить";
             this.ButtonAdd.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@
             // 
             // ButtonCancel
             // 
-            this.ButtonCancel.Location = new System.Drawing.Point(19, 255);
+            this.ButtonCancel.Location = new System.Drawing.Point(396, 152);
             this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Size = new System.Drawing.Size(171, 23);
+            this.ButtonCancel.Size = new System.Drawing.Size(100, 25);
             this.ButtonCancel.TabIndex = 1;
             this.ButtonCancel.Text = "Отмена";
             this.ButtonCancel.UseVisualStyleBackColor = true;
@@ -58,23 +58,23 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(19, 53);
+            this.NameTextBox.Location = new System.Drawing.Point(134, 12);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(171, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(362, 20);
             this.NameTextBox.TabIndex = 2;
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.Location = new System.Drawing.Point(19, 132);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(134, 46);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(171, 71);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(362, 100);
             this.DescriptionTextBox.TabIndex = 3;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(13, 13);
+            this.NameLabel.Location = new System.Drawing.Point(12, 15);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(106, 13);
             this.NameLabel.TabIndex = 4;
@@ -83,7 +83,7 @@
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(16, 94);
+            this.DescriptionLabel.Location = new System.Drawing.Point(12, 46);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(106, 13);
             this.DescriptionLabel.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 320);
+            this.ClientSize = new System.Drawing.Size(508, 183);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.DescriptionTextBox);
@@ -101,7 +101,7 @@
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonAdd);
             this.Name = "SituationAdd";
-            this.Text = "SituationAdd";
+            this.Text = "Добавить ситуацию";
             this.Load += new System.EventHandler(this.SituationAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
