@@ -18,13 +18,38 @@ namespace NewCompany
         }
 
         Entities db = new Entities();
+ //       private List<Session> SessionList = new List<Session>();
+
         private void SituationAdd_Load(object sender, EventArgs e)
         {
             
+
+
         }
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
+            string Name = NameTextBox.Text;
+            string Description = DescriptionTextBox.Text;
+            var Situation = new Situation();
+            DialogResult Approve = MessageBox.Show("Вы уверенны, что хотите добавить данную ситуацию?", "Предупреждение", MessageBoxButtons.OKCancel);
+            if (Approve.Equals(DialogResult.OK))
+            {
+                if (HasText(Name, Description))
+                {
+                    try
+                    {
+                        Situation.Name = Name;
+                        Situation.Description = Description;
+                        db.Situation.Add(Situation);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Произошла ошибка добавления");
+                    }
+                    MessageBox.Show("Ситуация успешно добавлена");
+                }
+            }
 
         }
 
@@ -34,10 +59,14 @@ namespace NewCompany
             DialogResult Exit = MessageBox.Show("Вы уверенны, что хотите выйти?", "Предупреждение", MessageBoxButtons.OKCancel);
             if (Exit.Equals(DialogResult.OK))
             {
-                this.Visible = false;
                 this.Owner.Visible = true;
+                this.Owner.Show();
                 this.Close();
             }
+        }
+        private bool HasText(string Name, string Description)
+        {
+            return (!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Description));
         }
     }
 }
