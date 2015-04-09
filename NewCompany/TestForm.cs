@@ -111,6 +111,16 @@ namespace NewCompany
             }
             else if (curPos == 4)
             {
+                NameLabel.Text = db.Situation.Find(questions[curPos]).Name;
+                ContentLabel.Text = db.Situation.Find(questions[curPos]).Description;
+                Group1.Text = "";
+                Group2.Text = "";
+                Group3.Text = "";
+                Group4.Text = "";
+                Action1.Text = "";
+                Action2.Text = "";
+                Action3.Text = "";
+                Action4.Text = "";
                 NextStepButton.Text = "Завершить тестирование";
             }
             else
