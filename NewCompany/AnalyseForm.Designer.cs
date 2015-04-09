@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ScoreTextBox = new System.Windows.Forms.TextBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.AddSituation = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +119,17 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // AddSituation
+            // 
+            this.AddSituation.FlatAppearance.BorderSize = 0;
+            this.AddSituation.Location = new System.Drawing.Point(835, -1);
+            this.AddSituation.Name = "AddSituation";
+            this.AddSituation.Size = new System.Drawing.Size(50, 50);
+            this.AddSituation.TabIndex = 6;
+            this.AddSituation.Text = "+";
+            this.AddSituation.UseCompatibleTextRendering = true;
+            this.AddSituation.UseVisualStyleBackColor = true;
+            // 
             // Оценка
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -125,6 +137,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 662);
             this.ControlBox = false;
+            this.Controls.Add(this.AddSituation);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox);
@@ -153,5 +166,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button AddSituation;
     }
 }
