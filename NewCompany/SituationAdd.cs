@@ -31,9 +31,13 @@ namespace NewCompany
         private void ButtonCancel_Click(object sender, EventArgs e)
         {       
             //MessageBox вы уверены что хотите выйти?
-            this.Visible = false;
-            this.Owner.Visible = true;
-            this.Close();
+            DialogResult Exit = MessageBox.Show("Вы уверенны, что хотите выйти?", "Предупреждение", MessageBoxButtons.OKCancel);
+            if (Exit.Equals(DialogResult.OK))
+            {
+                this.Visible = false;
+                this.Owner.Visible = true;
+                this.Close();
+            }
         }
     }
 }

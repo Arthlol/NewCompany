@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AnswerLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.ScoreTextBox = new System.Windows.Forms.TextBox();
-            this.exitButton = new System.Windows.Forms.Button();
             this.AddSituation = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,6 +82,16 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(635, 498);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(150, 28);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.Text = "Выход";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -109,16 +119,6 @@
             this.ScoreTextBox.TabIndex = 5;
             this.ScoreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(635, 498);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(150, 28);
-            this.exitButton.TabIndex = 8;
-            this.exitButton.Text = "Выход";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // AddSituation
             // 
             this.AddSituation.FlatAppearance.BorderSize = 0;
@@ -129,6 +129,7 @@
             this.AddSituation.Text = "+";
             this.AddSituation.UseCompatibleTextRendering = true;
             this.AddSituation.UseVisualStyleBackColor = true;
+            this.AddSituation.Click += new System.EventHandler(this.AddSituation_Click);
             // 
             // Оценка
             // 

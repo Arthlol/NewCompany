@@ -105,5 +105,11 @@ namespace NewCompany
             this.Owner.Visible = true;
             this.Close();
         }
+
+        private void AddSituation_Click(object sender, EventArgs e)
+        {
+            var SituationAddForm = new SituationAdd();
+            SituationAddForm.Show(this);
+        }
     }
 }
