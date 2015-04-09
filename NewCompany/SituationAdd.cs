@@ -18,11 +18,11 @@ namespace NewCompany
         }
 
         Entities db = new Entities();
- //       private List<Session> SessionList = new List<Session>();
+        //       private List<Session> SessionList = new List<Session>();
 
         private void SituationAdd_Load(object sender, EventArgs e)
         {
-            
+
 
 
         }
@@ -42,19 +42,33 @@ namespace NewCompany
                         Situation.Name = Name;
                         Situation.Description = Description;
                         db.Situation.Add(Situation);
+                        db.SaveChanges();
+
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Произошла ошибка добавления");
                     }
-                    MessageBox.Show("Ситуация успешно добавлена");
+
+                    DialogResult res = MessageBox.Show("Ситуация успешно добавлена. \n Хотите добавить новую ситуацию?", "", MessageBoxButtons.OKCancel);
+
+                    if (res.Equals(DialogResult.OK))
+                    {
+                        this.DescriptionTextBox.Text = "";
+                        this.NameTextBox.Text = "";
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+
                 }
             }
 
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
-        {       
+        {
             //MessageBox вы уверены что хотите выйти?
             DialogResult Exit = MessageBox.Show("Вы уверенны, что хотите выйти?", "Предупреждение", MessageBoxButtons.OKCancel);
             if (Exit.Equals(DialogResult.OK))
