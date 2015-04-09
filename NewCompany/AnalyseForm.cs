@@ -72,9 +72,12 @@ namespace NewCompany
                 int Score = 0;
                 int.TryParse(ScoreTextBox.Text, out Score);
                 var item = db.Session.Find(SessionId);
+                int LastScore = item.Score ?? -1;
                 item.Score = Score;
                 db.SaveChanges();
-                comboBox.Text = comboBox.Text.Substring(2) + " → " + Score.ToString();
+                if (LastScore == -1)
+                comboBox.Text = comboBox.Text.Substring(2);
+                comboBox.Text += " → " + Score.ToString();
                 UpdateCombobox();
             }
         }
