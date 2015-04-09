@@ -21,26 +21,11 @@ namespace NewCompany
         Entities db = new Entities();
         private void Оценка_Load(object sender, EventArgs e)
         {
-            var AnswerList = db.Answer.ToList();
-            var SessionList = db.Session.ToList();
-            var SituaionList = db.Session.ToList();
-            comboBox.DataSource = db.Session.ToList();
-            foreach (var element in SituaionList)
-            {
-                element.Surname = "";
-                if (element.Score == null)
-                    element.Surname += "!";
-                element.Surname += element.Surname + " " + element.Name + ", " + element.Group;
-                if (element.Score != null)
-                    element.Surname += " " + element.Score.ToString();
-            }
-            comboBox.ValueMember = "Id";
-            comboBox.DisplayMember = "Surname";
+            UpdateCombobox();
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Text = comboBox.SelectedValue.ToString();
             if (int.TryParse(comboBox.SelectedValue.ToString(), out SessionId))
             {
                 var AnswerList = db.Answer.Where(x => x.SessionId == SessionId).GroupBy(x => x.SituationId);
@@ -77,14 +62,33 @@ namespace NewCompany
                 MessageBox.Show("Введите оценку", "Внимание");
             else
             {
-
                 int Score = 0;
                 int.TryParse(ScoreTextBox.Text, out Score);
                 var item = db.Session.Find(SessionId);
                 item.Score = Score;
                 db.SaveChanges();
+                comboBox.Text = comboBox.Text.Substring(3) + " " + Score.ToString();
+                UpdateCombobox();
             }
+        }
 
+        public void UpdateCombobox()
+        {
+            int val = comboBox.SelectedIndex == -1 ? 1 : comboBox.SelectedIndex;
+            var SituaionList = db.Session.ToList();
+            comboBox.DataSource = db.Session.ToList();
+            foreach (var element in SituaionList)
+            {
+                element.Surname = "";
+                if (element.Score == null)
+                    element.Surname += "!";
+                element.Surname += element.Surname + " " + element.Name + ", " + element.Group;
+                if (element.Score != null)
+                    element.Surname += " " + element.Score.ToString();
+            }
+            comboBox.ValueMember = "Id";
+            comboBox.DisplayMember = "Surname";
+            comboBox.SelectedIndex = val;
         }
     }
 }
