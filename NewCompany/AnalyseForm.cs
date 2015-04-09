@@ -74,7 +74,7 @@ namespace NewCompany
 
         public void UpdateCombobox()
         {
-            int val = comboBox.SelectedIndex == -1 ? 1 : comboBox.SelectedIndex;
+            int val = comboBox.SelectedIndex == -1 ? 0 : comboBox.SelectedIndex;
             var SituaionList = db.Session.ToList();
             comboBox.DataSource = db.Session.ToList();
             foreach (var element in SituaionList)
@@ -89,6 +89,12 @@ namespace NewCompany
             comboBox.ValueMember = "Id";
             comboBox.DisplayMember = "Surname";
             comboBox.SelectedIndex = val;
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Owner.Visible = true;
+            this.Close();
         }
     }
 }

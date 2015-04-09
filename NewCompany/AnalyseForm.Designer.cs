@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.ScoreTextBox = new System.Windows.Forms.TextBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.exitButton);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.ScoreTextBox);
@@ -90,7 +92,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(644, 498);
+            this.button1.Location = new System.Drawing.Point(479, 498);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 28);
             this.button1.TabIndex = 6;
@@ -100,11 +102,21 @@
             // 
             // ScoreTextBox
             // 
-            this.ScoreTextBox.Location = new System.Drawing.Point(611, 498);
+            this.ScoreTextBox.Location = new System.Drawing.Point(446, 499);
             this.ScoreTextBox.Name = "ScoreTextBox";
             this.ScoreTextBox.Size = new System.Drawing.Size(27, 27);
             this.ScoreTextBox.TabIndex = 5;
             this.ScoreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(635, 498);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(150, 28);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.Text = "Выход";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // Оценка
             // 
@@ -140,5 +152,6 @@
         private System.Windows.Forms.TextBox ScoreTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button exitButton;
     }
 }
