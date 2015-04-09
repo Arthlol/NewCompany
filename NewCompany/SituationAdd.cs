@@ -50,9 +50,9 @@ namespace NewCompany
                         MessageBox.Show("Произошла ошибка добавления");
                     }
 
-                    DialogResult res = MessageBox.Show("Ситуация успешно добавлена. \n Хотите добавить новую ситуацию?", "", MessageBoxButtons.OKCancel);
+                    DialogResult res = MessageBox.Show("Ситуация успешно добавлена. \n Хотите добавить новую ситуацию?", "", MessageBoxButtons.YesNo);
 
-                    if (res.Equals(DialogResult.OK))
+                    if (res.Equals(DialogResult.Yes))
                     {
                         this.DescriptionTextBox.Text = "";
                         this.NameTextBox.Text = "";
@@ -61,7 +61,10 @@ namespace NewCompany
                     {
                         this.Close();
                     }
-
+                }
+                else
+                {
+                    MessageBox.Show("Заполните все поля!");
                 }
             }
 
