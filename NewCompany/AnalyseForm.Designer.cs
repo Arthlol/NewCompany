@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ScoreTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.ScoreTextBox);
             this.groupBox1.Location = new System.Drawing.Point(50, 100);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(800, 537);
@@ -96,13 +96,15 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Оценить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // ScoreTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(611, 498);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(27, 27);
-            this.textBox1.TabIndex = 5;
+            this.ScoreTextBox.Location = new System.Drawing.Point(611, 498);
+            this.ScoreTextBox.Name = "ScoreTextBox";
+            this.ScoreTextBox.Size = new System.Drawing.Size(27, 27);
+            this.ScoreTextBox.TabIndex = 5;
+            this.ScoreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Оценка
             // 
@@ -135,7 +137,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label AnswerLabel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ScoreTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
     }

@@ -12,6 +12,8 @@ namespace NewCompany
 {
     public partial class Оценка : Form
     {
+
+        int SessionId = 0;
         public Оценка()
         {
             InitializeComponent();
@@ -23,22 +25,28 @@ namespace NewCompany
             var SessionList = db.Session.ToList();
             var SituaionList = db.Session.ToList();
             comboBox.DataSource = db.Session.ToList();
-            foreach (var element in SituaionList )
+            foreach (var element in SituaionList)
             {
-                element.Surname = element.Surname + " " + element.Name + ", " + element.Group;
+                element.Surname = "";
+                if (element.Score == null)
+                    element.Surname += "!";
+                element.Surname += element.Surname + " " + element.Name + ", " + element.Group;
+                if (element.Score != null)
+                    element.Surname += " " + element.Score.ToString();
             }
-            comboBox.ValueMember =  "Id";
+            comboBox.ValueMember = "Id";
             comboBox.DisplayMember = "Surname";
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.Text = comboBox.SelectedValue.ToString();
-            int SessionId = 0;
             if (int.TryParse(comboBox.SelectedValue.ToString(), out SessionId))
             {
                 var AnswerList = db.Answer.Where(x => x.SessionId == SessionId).GroupBy(x => x.SituationId);
-                //AnswerLabel.Text = "";
+                AnswerLabel.Text = "";
+                var Score = db.Session.Find(SessionId).Score.ToString();
+                ScoreTextBox.Text = Score;
                 foreach (var s in AnswerList)
                 {
                     AnswerLabel.Text += "○ " + db.Situation.Find(s.FirstOrDefault().SituationId).Name;
@@ -51,6 +59,32 @@ namespace NewCompany
                     AnswerLabel.Text += "\n";
                 }
             }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (ScoreTextBox.Text.Length == 0)
+                e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            else
+            {
+                e.Handled = !(e.KeyChar == (char)Keys.Back);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (ScoreTextBox.Text.Length == 0)
+                MessageBox.Show("Введите оценку", "Внимание");
+            else
+            {
+
+                int Score = 0;
+                int.TryParse(ScoreTextBox.Text, out Score);
+                var item = db.Session.Find(SessionId);
+                item.Score = Score;
+                db.SaveChanges();
+            }
+
         }
     }
 }
