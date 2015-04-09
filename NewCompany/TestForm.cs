@@ -25,6 +25,7 @@ namespace NewCompany
 
         private void TestForm_Load(object sender, EventArgs e)
         {
+            
             CounterLabel.Text = (curPos + 1).ToString() + " из 5";
             Random random = new Random();
             for (int i = 0; i < 5; i++)
@@ -107,6 +108,9 @@ namespace NewCompany
             if (curPos > 4)
             {
                 this.Visible = false;
+                (this.Owner as Form1).NameTextBox.Text = "";
+                (this.Owner as Form1).SurnameTextBox.Text = "";
+                (this.Owner as Form1).GroupTextBox.Text = "";
                 this.Owner.Visible = true;
                 this.Close();
 

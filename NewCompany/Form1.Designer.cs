@@ -196,11 +196,11 @@
         private System.Windows.Forms.Button NewGameButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label WelcomeLabel;
-        private System.Windows.Forms.TextBox NameTextBox;
+        public System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox GroupTextBox;
+        public System.Windows.Forms.TextBox GroupTextBox;
         private System.Windows.Forms.Label GroupLabel;
-        private System.Windows.Forms.TextBox SurnameTextBox;
+        public System.Windows.Forms.TextBox SurnameTextBox;
         private System.Windows.Forms.Label SurnameLabel;
         public System.Windows.Forms.GroupBox EnterSessionDataGroupBox;
         private System.Windows.Forms.Button AnalyseButton;
