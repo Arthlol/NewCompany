@@ -50,6 +50,7 @@
             this.comboBox.Size = new System.Drawing.Size(500, 29);
             this.comboBox.TabIndex = 1;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
+            this.comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_KeyPress);
             // 
             // label1
             // 
@@ -143,10 +144,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Оценка";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AnalyseForm";
+            this.Text = "Проверка результатов";
             this.Load += new System.EventHandler(this.Оценка_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

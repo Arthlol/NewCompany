@@ -111,5 +111,10 @@ namespace NewCompany
             var SituationAddForm = new SituationAdd();
             SituationAddForm.Show(this);
         }
+
+        private void comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

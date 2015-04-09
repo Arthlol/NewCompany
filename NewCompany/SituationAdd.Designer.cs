@@ -100,6 +100,7 @@
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SituationAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить ситуацию";

@@ -79,10 +79,10 @@
             this.PasswordLabel.TabIndex = 4;
             this.PasswordLabel.Text = "Пароль";
             // 
-            // CancelButton
+            // ButtonCancel
             // 
             this.ButtonCancel.Location = new System.Drawing.Point(154, 63);
-            this.ButtonCancel.Name = "CancelButton";
+            this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(122, 23);
             this.ButtonCancel.TabIndex = 4;
             this.ButtonCancel.Text = "Отмена";
@@ -101,6 +101,7 @@
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.AccessButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AccessForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результаты";

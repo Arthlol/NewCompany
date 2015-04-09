@@ -45,6 +45,7 @@
             // NewGameButton
             // 
             this.NewGameButton.BackColor = System.Drawing.Color.LightGreen;
+            this.NewGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NewGameButton.Location = new System.Drawing.Point(300, 450);
             this.NewGameButton.Margin = new System.Windows.Forms.Padding(5);
             this.NewGameButton.Name = "NewGameButton";
@@ -85,6 +86,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Location = new System.Drawing.Point(150, 100);
+            this.NameTextBox.MaxLength = 40;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(300, 27);
             this.NameTextBox.TabIndex = 3;
@@ -102,6 +104,7 @@
             // GroupTextBox
             // 
             this.GroupTextBox.Location = new System.Drawing.Point(150, 150);
+            this.GroupTextBox.MaxLength = 40;
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(300, 27);
             this.GroupTextBox.TabIndex = 5;
@@ -118,6 +121,7 @@
             // SurnameTextBox
             // 
             this.SurnameTextBox.Location = new System.Drawing.Point(150, 50);
+            this.SurnameTextBox.MaxLength = 40;
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(300, 27);
             this.SurnameTextBox.TabIndex = 1;
@@ -171,6 +175,7 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NewGameButton);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.ShowIcon = false;
