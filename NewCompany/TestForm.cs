@@ -25,6 +25,7 @@ namespace NewCompany
 
         private void TestForm_Load(object sender, EventArgs e)
         {
+            CounterLabel.Text = (curPos + 1).ToString() + " из 5";
             Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
@@ -102,6 +103,7 @@ namespace NewCompany
 
         private void Reload()
         {
+            CounterLabel.Text = (curPos + 1).ToString() + " из 5";
             if (curPos > 4)
             {
                 this.Visible = false;

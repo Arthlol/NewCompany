@@ -101,6 +101,7 @@
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonAdd);
             this.Name = "SituationAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить ситуацию";
             this.Load += new System.EventHandler(this.SituationAdd_Load);
             this.ResumeLayout(false);

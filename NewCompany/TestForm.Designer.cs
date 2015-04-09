@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.CounterLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -66,12 +67,12 @@
             // ContentLabel
             // 
             this.ContentLabel.AutoSize = true;
-            this.ContentLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ContentLabel.Location = new System.Drawing.Point(50, 75);
+            this.ContentLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ContentLabel.Location = new System.Drawing.Point(52, 50);
             this.ContentLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ContentLabel.MaximumSize = new System.Drawing.Size(800, 0);
             this.ContentLabel.Name = "ContentLabel";
-            this.ContentLabel.Size = new System.Drawing.Size(97, 24);
+            this.ContentLabel.Size = new System.Drawing.Size(78, 19);
             this.ContentLabel.TabIndex = 1;
             this.ContentLabel.Text = "Content";
             // 
@@ -215,6 +216,15 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Действие";
             // 
+            // CounterLabel
+            // 
+            this.CounterLabel.AutoSize = true;
+            this.CounterLabel.Location = new System.Drawing.Point(589, 614);
+            this.CounterLabel.Name = "CounterLabel";
+            this.CounterLabel.Size = new System.Drawing.Size(57, 21);
+            this.CounterLabel.TabIndex = 10;
+            this.CounterLabel.Text = "label4";
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -222,6 +232,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.CounterLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -271,5 +282,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label CounterLabel;
     }
 }
